@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle</title>
+</head>
+<body>
+    <h1>Detalle del registro {{ m.mes }}/{{ m.anio }}</h1>
+
+    <p>Casos reportados: {{ m.casos_reportados }}</p>
+    <p>Horas hombre trabajadas: {{ m.horas_hombre }}</p>
+
+    <h2>Indicadores</h2>
+    <ul>
+        <li>Accidentabilidad: {{ ind.accidentabilidad }}</li>
+        <li>Frecuencia: {{ ind.frecuencia }}</li>
+        <li>Severidad: {{ ind.severidad }}</li>
+    </ul>
+
+    <a href="{% url 'lista_registros' %}">⬅ Volver al listado</a>
+</body>
+</html>
