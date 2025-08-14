@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registros</title>
+</head>
+<body>
+    <h1>Listado de registros</h1>
+    <ul>
+        {% for r in items %}
+            <li>
+                <a href="{% url 'detalle_registro' r.pk %}">
+                    {{ r.mes }}/{{ r.anio }} - {{ r.casos_reportados }} casos
+                </a>
+            </li>
+        {% empty %}
+            <li>No hay registros aún.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'nuevo_registro' %}">➕ Nuevo registro</a>
+</body>
+</html>
